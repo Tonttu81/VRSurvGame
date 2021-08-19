@@ -626,11 +626,17 @@
     <Reference Include="UnityEngine.TestRunner">
       <HintPath>D:/Unity stuff/VrSurvivalGame2/VRSurvGame/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.XR.Management">
+      <HintPath>D:/Unity stuff/VrSurvivalGame2/VRSurvGame/Library/ScriptAssemblies/Unity.XR.Management.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
       <HintPath>D:/Unity stuff/VrSurvivalGame2/VRSurvGame/Library/ScriptAssemblies/Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/Unity stuff/VrSurvivalGame2/VRSurvGame/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Subsystem.Registration">
+      <HintPath>D:/Unity stuff/VrSurvivalGame2/VRSurvGame/Library/ScriptAssemblies/Unity.Subsystem.Registration.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.Interaction.Toolkit">
       <HintPath>D:/Unity stuff/VrSurvivalGame2/VRSurvGame/Library/ScriptAssemblies/Unity.XR.Interaction.Toolkit.dll</HintPath>
@@ -653,8 +659,14 @@
     <Reference Include="Unity.RenderPipelines.Core.Runtime">
       <HintPath>D:/Unity stuff/VrSurvivalGame2/VRSurvGame/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.XR.Oculus">
+      <HintPath>D:/Unity stuff/VrSurvivalGame2/VRSurvGame/Library/ScriptAssemblies/Unity.XR.Oculus.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>D:/Unity stuff/VrSurvivalGame2/VRSurvGame/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.XR.Oculus.Editor">
+      <HintPath>D:/Unity stuff/VrSurvivalGame2/VRSurvGame/Library/ScriptAssemblies/Unity.XR.Oculus.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Runtime">
       <HintPath>D:/Unity stuff/VrSurvivalGame2/VRSurvGame/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
@@ -673,6 +685,9 @@
     </Reference>
     <Reference Include="UnityEngine.XR.LegacyInputHelpers">
       <HintPath>D:/Unity stuff/VrSurvivalGame2/VRSurvGame/Library/ScriptAssemblies/UnityEngine.XR.LegacyInputHelpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.XR.Management.Editor">
+      <HintPath>D:/Unity stuff/VrSurvivalGame2/VRSurvGame/Library/ScriptAssemblies/Unity.XR.Management.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
       <HintPath>D:/Unity stuff/VrSurvivalGame2/VRSurvGame/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
@@ -700,21 +715,6 @@
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>D:/Unity stuff/VrSurvivalGame2/VRSurvGame/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.XR.Management">
-      <HintPath>D:/Unity stuff/VrSurvivalGame2/VRSurvGame/Library/ScriptAssemblies/Unity.XR.Management.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Subsystem.Registration">
-      <HintPath>D:/Unity stuff/VrSurvivalGame2/VRSurvGame/Library/ScriptAssemblies/Unity.Subsystem.Registration.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.XR.Management.Editor">
-      <HintPath>D:/Unity stuff/VrSurvivalGame2/VRSurvGame/Library/ScriptAssemblies/Unity.XR.Management.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.XR.Oculus">
-      <HintPath>D:/Unity stuff/VrSurvivalGame2/VRSurvGame/Library/ScriptAssemblies/Unity.XR.Oculus.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.XR.Oculus.Editor">
-      <HintPath>D:/Unity stuff/VrSurvivalGame2/VRSurvGame/Library/ScriptAssemblies/Unity.XR.Oculus.Editor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
