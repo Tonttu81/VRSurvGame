@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 130
+  controlID: 108
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -68,8 +68,8 @@ MonoBehaviour:
     y: 0
     width: 519
     height: 1307
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -219,7 +219,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 103
+  controlID: 36
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -244,7 +244,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 104
+  controlID: 37
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -338,34 +338,35 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs
+    - Assets/Thirdparty/Gridbox Prototype Materials/Resources/Materials/Prototype
+      Grid
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs
+  - Assets/Thirdparty/Gridbox Prototype Materials/Resources/Materials/Prototype Grid
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\Unity stuff\VrSurvivalGame2\VRSurvGame
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: f4400000
-    m_LastClickedID: 16628
-    m_ExpandedIDs: 00000000e4400000e6400000e8400000ea400000ec4000000441000006410000
+    m_SelectedIDs: cc420000
+    m_LastClickedID: 17100
+    m_ExpandedIDs: 00000000f63e00005441000056410000584100005a4100005c4100005e4100009441000096410000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: oculus_cv1_controller_left
-      m_OriginalName: oculus_cv1_controller_left
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 16644
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 5}
     m_SearchString: 
@@ -379,7 +380,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000e4400000e6400000e8400000ea400000ec400000
+    m_ExpandedIDs: 00000000f63e00005441000056410000584100005a4100005c4100005e410000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -504,21 +505,21 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: b2dcffff46fbffffa83f0000f63f0000
+      m_ExpandedIDs: c68dfeff2aabfeffa011ffff3412ffffa419ffff82f7ffffd6f9ffff48fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Vr Rig
-        m_OriginalName: Vr Rig
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 16296
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 4}
       m_SearchString: 
@@ -564,9 +565,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.5060356, y: 0.7946063, z: 0.037030097}
+    m_Target: {x: -18.010921, y: -5.215321, z: -6.0510077}
     speed: 2
-    m_Value: {x: -0.5060356, y: 0.7946063, z: 0.037030097}
+    m_Value: {x: -18.010921, y: -5.215321, z: -6.0510077}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -612,20 +613,20 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.019118752, y: 0.9766414, z: -0.19016768, w: -0.09818776}
+    m_Target: {x: -0.10378161, y: 0.80557424, z: -0.14806825, w: -0.56430125}
     speed: 2
-    m_Value: {x: -0.019118765, y: 0.97664213, z: -0.19016781, w: -0.09818783}
+    m_Value: {x: -0.10377743, y: 0.80554175, z: -0.14806229, w: -0.56427854}
   m_Size:
-    m_Target: 1.3980105
+    m_Target: 10.40772
     speed: 2
-    m_Value: 1.6980104
+    m_Value: 10.898136
   m_Ortho:
     m_Target: 0
     speed: 2
     m_Value: 0
   m_CameraSettings:
-    m_Speed: 1
-    m_SpeedNormalized: 0.5
+    m_Speed: 1.9
+    m_SpeedNormalized: 0.97
     m_SpeedMin: 0.01
     m_SpeedMax: 2
     m_EasingEnabled: 1
