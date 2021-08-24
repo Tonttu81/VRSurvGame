@@ -30,7 +30,9 @@ public class EndlessTerrain : MonoBehaviour
         ChunkSize = MapGenerator.mapChunkSize - 1;
         ChunkVisableInViewDist = Mathf.RoundToInt(maxViewDst / ChunkSize);
 
-        UpdateVisableChunks();
+
+        CreateChunks();
+        //UpdateVisableChunks();
     }
 
     private void Update()
@@ -40,6 +42,26 @@ public class EndlessTerrain : MonoBehaviour
         {
             viewerPositionOld = viewerPosition;
             UpdateVisableChunks();
+        }
+    }
+
+    void CreateChunks()
+    {
+        int currentChunkCoordX = Mathf.RoundToInt(viewerPosition.x / ChunkSize);
+        int currentChunkCoordY = Mathf.RoundToInt(viewerPosition.y / ChunkSize);
+
+
+        for (int yOffset = -ChunkVisableInViewDist; yOffset <= ChunkVisableInViewDist; yOffset++)
+        {
+            for (int xOffset = -ChunkVisableInViewDist; xOffset <= ChunkVisableInViewDist; xOffset++)
+            {
+                Vector2 viewedChunkCoord = new Vector2(currentChunkCoordX + xOffset, currentChunkCoordY + yOffset);
+
+                if (!terrainChunkDictionary.ContainsKey(viewedChunkCoord))
+                {
+                    terrainChunkDictionary.Add(viewedChunkCoord, new TerrainChunk(viewedChunkCoord, ChunkSize, detailLevels, transform, mapMaterial));
+                }
+            }
         }
     }
 
@@ -64,12 +86,27 @@ public class EndlessTerrain : MonoBehaviour
                 {
                     terrainChunkDictionary[viewedChunkCoord].UpdateTerrainChunk();
                 }
+            }
+        }
+
+        /*
+        for (int yOffset = -ChunkVisableInViewDist; yOffset <= ChunkVisableInViewDist; yOffset++)
+        {
+            for (int xOffset = -ChunkVisableInViewDist; xOffset <= ChunkVisableInViewDist; xOffset++)
+            {
+                Vector2 viewedChunkCoord = new Vector2(currentChunkCoordX + xOffset, currentChunkCoordY + yOffset);
+
+                if (terrainChunkDictionary.ContainsKey(viewedChunkCoord))
+                {
+                    terrainChunkDictionary[viewedChunkCoord].UpdateTerrainChunk();
+                }
                 else
                 {
                     terrainChunkDictionary.Add(viewedChunkCoord, new TerrainChunk(viewedChunkCoord, ChunkSize, detailLevels, transform, mapMaterial));
                 }
             }
         }
+        */
     }
 
     public class TerrainChunk
