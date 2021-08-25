@@ -35,6 +35,8 @@ public class MapGenerator : MonoBehaviour
 
     public TerrainType[] regions;
 
+    public Gradient gradient;
+
     float[,] falloffMap;
 
     void Awake()
@@ -57,7 +59,7 @@ public class MapGenerator : MonoBehaviour
         }
         else if (drawMode == DrawMode.Mesh)
         {
-            display.DrawMesh(MeshGenerator.GenerateTerrainMesh(mapData.heightMap, MeshHeightMultiplier, meshHeightCurve, editorPreviewLOD), TextureGenerator.TextureFromColorMap(mapData.colorMap, mapChunkSize, mapChunkSize));
+            display.DrawMesh(MeshGenerator.GenerateTerrainMesh(mapData.heightMap, MeshHeightMultiplier, meshHeightCurve, editorPreviewLOD, gradient), TextureGenerator.TextureFromColorMap(mapData.colorMap, mapChunkSize, mapChunkSize));
         }
         else if (drawMode == DrawMode.FalloffMap)
         {
@@ -83,6 +85,7 @@ public class MapGenerator : MonoBehaviour
                 }
                 float currentHeight = noiseMap[x, y];
                 
+                /*
                 for (int i = 0; i < regions.Length; i++)
                 {
                     if (currentHeight >= regions[i].height)
@@ -94,6 +97,7 @@ public class MapGenerator : MonoBehaviour
                         break;
                     }
                 }
+                */
 
             }
         }

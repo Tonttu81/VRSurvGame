@@ -64,7 +64,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\HandPresence.cs" />
     <Compile Include="Assets\Maybe\EndlessTerrain.cs" />
     <Compile Include="Assets\Maybe\NotInUse.cs" />
     <Compile Include="Assets\Scripts\FalloffGenerator.cs" />
@@ -73,7 +72,7 @@
     <Compile Include="Assets\Scripts\MeshGenerator.cs" />
     <Compile Include="Assets\Scripts\Noise.cs" />
     <Compile Include="Assets\Scripts\TextureGenerator.cs" />
-    <Compile Include="Assets\ShaderVars.cs" />
+    <Compile Include="Assets\VR Scripts\HandPresence.cs" />
     <None Include="Assets\Stylized Sky\Shaders\Stylized Sky.shader" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.10f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
