@@ -59,7 +59,9 @@ public class MapGenerator : MonoBehaviour
         }
         else if (drawMode == DrawMode.Mesh)
         {
-            display.DrawMesh(MeshGenerator.GenerateTerrainMesh(mapData.heightMap, MeshHeightMultiplier, meshHeightCurve, editorPreviewLOD, gradient), TextureGenerator.TextureFromColorMap(mapData.colorMap, mapChunkSize, mapChunkSize));
+            MeshData meshData = MeshGenerator.GenerateTerrainMesh(mapData.heightMap, MeshHeightMultiplier, meshHeightCurve, editorPreviewLOD, gradient);
+            MeshData colliderData = MeshGenerator.GenerateTerrainMesh(mapData.heightMap, MeshHeightMultiplier, meshHeightCurve, editorPreviewLOD + 1, gradient);
+            display.DrawMesh(meshData, colliderData/*MeshGenerator.GenerateTerrainMesh(mapData.heightMap, MeshHeightMultiplier, meshHeightCurve, editorPreviewLOD, gradient), TextureGenerator.TextureFromColorMap(mapData.colorMap, mapChunkSize, mapChunkSize)*/);
         }
         else if (drawMode == DrawMode.FalloffMap)
         {
