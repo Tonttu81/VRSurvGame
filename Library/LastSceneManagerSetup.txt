@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/VrTest.unity
+- path: Assets/Scenes/WorldGen.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
