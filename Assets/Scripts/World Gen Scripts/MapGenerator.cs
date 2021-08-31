@@ -132,6 +132,7 @@ public struct TerrainType
 
 public struct MapData
 {
+    [Range(0,35)]
     public readonly float[,] heightMap;
     public readonly Color[] colorMap;
 
