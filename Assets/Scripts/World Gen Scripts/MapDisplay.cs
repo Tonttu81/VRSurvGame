@@ -8,6 +8,10 @@ public class MapDisplay : MonoBehaviour
     public MeshFilter meshFilter;
     public MeshRenderer meshRender;
     public MeshCollider meshCollider;
+    public GrassGenerator grassGenerator;
+
+    public float minGrassHeight;
+    public float maxGrassHeight;
 
 
     public void DrawTexture(Texture2D texture)
@@ -20,6 +24,7 @@ public class MapDisplay : MonoBehaviour
     {
         meshFilter.sharedMesh = meshData.CreateMesh();
         meshCollider.sharedMesh = colliderData.CreateMesh();
+        grassGenerator.GenerateGrass(maxGrassHeight, minGrassHeight, meshData.CreateMesh());
         //meshRender.sharedMaterial.mainTexture = texture;  
     }
 }

@@ -100,7 +100,7 @@ MonoBehaviour:
   - {fileID: -7573954020372456424}
   - {fileID: -4907986081321566046}
   - {fileID: 3981209547909454046}
-  - {fileID: 4564474099830770246}
+  - {fileID: 2204999824351433919}
   - {fileID: 3591518043872381527}
   - {fileID: 8551334289610813965}
 --- !u!114 &681560161512084175
@@ -150,6 +150,29 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: 0
     min: 0
+--- !u!114 &2204999824351433919
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5485954d14dfb9a4c8ead8edb0ded5b1, type: 3}
+  m_Name: LiftGammaGain
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  lift:
+    m_OverrideState: 0
+    m_Value: {x: 1, y: 1, z: 1, w: 0}
+  gamma:
+    m_OverrideState: 0
+    m_Value: {x: 1, y: 1, z: 1, w: 0}
+  gain:
+    m_OverrideState: 0
+    m_Value: {x: 1, y: 1, z: 1, w: 0}
 --- !u!114 &3591518043872381527
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -206,7 +229,7 @@ MonoBehaviour:
     m_Value: {x: 0.5, y: 0.5}
   intensity:
     m_OverrideState: 1
-    m_Value: 0.234
+    m_Value: 0.181
     min: 0
     max: 1
   smoothness:
@@ -234,29 +257,6 @@ MonoBehaviour:
   mode:
     m_OverrideState: 1
     m_Value: 1
---- !u!114 &4564474099830770246
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5485954d14dfb9a4c8ead8edb0ded5b1, type: 3}
-  m_Name: LiftGammaGain
-  m_EditorClassIdentifier: 
-  active: 1
-  m_AdvancedMode: 0
-  lift:
-    m_OverrideState: 1
-    m_Value: {x: 0.6796255, y: 1, z: 0.86526686, w: -0.07564296}
-  gamma:
-    m_OverrideState: 1
-    m_Value: {x: 1, y: 0.8307677, z: 0.85954857, w: -0.13615732}
-  gain:
-    m_OverrideState: 1
-    m_Value: {x: 0.5235472, y: 0.7563025, z: 1, w: 0.22692887}
 --- !u!114 &8551334289610813965
 MonoBehaviour:
   m_ObjectHideFlags: 3
