@@ -13,9 +13,12 @@ public static class MeshGenerator
 		float topLeftX = (width - 1) / -2f;
 		float topLeftZ = (height - 1) / 2f;
 
+
+		// Muuttaa regionien/sen käyrän korkeuden minimi ja maksimi arvoja
 		float maxHeight = 10;
 		float minHeight = 0;
 
+		//Level of detail
 		int meshSimplificationIncrement = (levelOfDetail == 0) ? 1 : levelOfDetail * 2;
 		int verticesPerLine = (width - 1) / meshSimplificationIncrement + 1;
 
