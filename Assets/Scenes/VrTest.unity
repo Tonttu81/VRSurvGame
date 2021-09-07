@@ -463,8 +463,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 12789250}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.5077453, y: -3.0723765, z: 4.848755}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1910139012}
@@ -576,6 +576,9 @@ GameObject:
   - component: {fileID: 51448816}
   - component: {fileID: 51448815}
   - component: {fileID: 51448817}
+  - component: {fileID: 51448819}
+  - component: {fileID: 51448818}
+  - component: {fileID: 51448820}
   m_Layer: 0
   m_Name: Vr Rig
   m_TagString: Untagged
@@ -609,7 +612,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 51448812}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.95, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1910139012}
@@ -659,6 +662,64 @@ MonoBehaviour:
   rightTeleportRay: {fileID: 12789254}
   teleportActivationButton: 2
   activationThreshold: 0.1
+--- !u!143 &51448818
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 51448812}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.15
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &51448819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 51448812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 677113f8321e8ac40863e9a3eb9069c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 1
+  inputSource: 4
+  GroundLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  AdditionalHeght: 0
+  Gravity: -9.81
+--- !u!114 &51448820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 51448812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc4f2c0214c9b494fa7eb5b8b2c02885, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_System: {fileID: 0}
+  m_TurnAmount: 45
+  m_DebounceTime: 0.2
+  m_EnableTurnLeftRight: 1
+  m_EnableTurnAround: 1
+  m_TurnUsage: 0
+  m_Controllers:
+  - {fileID: 1755476205}
+  m_DeadZone: 0.75
 --- !u!1 &184980114
 GameObject:
   m_ObjectHideFlags: 0
@@ -942,8 +1003,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 556893317}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.5077453, y: -3.0723765, z: 4.848755}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1910139012}
@@ -1768,7 +1829,7 @@ GameObject:
   - component: {fileID: 1515865912}
   - component: {fileID: 1515865911}
   - component: {fileID: 1515865910}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Teleportation Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2057,7 +2118,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 9a357a7ff230b084f83d18414981860b,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 5
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9a357a7ff230b084f83d18414981860b,
         type: 3}
@@ -2067,7 +2128,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 9a357a7ff230b084f83d18414981860b,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 5
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 9a357a7ff230b084f83d18414981860b,
         type: 3}

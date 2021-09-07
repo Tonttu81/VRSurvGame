@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32e00a84fee5e73429213ad64d356373, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  showController: 1
+  showController: 0
   controllerCharacteristics: 576
   controllerPrefabs:
   - {fileID: -927199367670048503, guid: 3ad3c8a0cd60ccd489485ec2973dd9bf, type: 3}
