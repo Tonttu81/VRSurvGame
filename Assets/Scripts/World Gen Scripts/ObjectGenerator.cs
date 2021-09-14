@@ -52,7 +52,7 @@ public class ObjectGenerator : MonoBehaviour
 
         for (int i = 0; i < objectDensity; i++)
         {
-            
+
         }
     }
 

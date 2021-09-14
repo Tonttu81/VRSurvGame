@@ -23,8 +23,12 @@ public class MapDisplay : MonoBehaviour
     public void DrawMesh(MeshData meshData, MeshData colliderData/*, Texture2D texture*/)
     {
         meshFilter.sharedMesh = meshData.CreateMesh();
-        meshCollider.sharedMesh = colliderData.CreateMesh();
-        grassGenerator.GenerateGrass(maxGrassHeight, minGrassHeight, meshData.CreateMesh());
+        meshFilter.sharedMesh.RecalculateNormals();
+        meshFilter.sharedMesh.RecalculateBounds();
+        meshFilter.sharedMesh.RecalculateTangents();
+        meshCollider.sharedMesh = meshFilter.sharedMesh;
+        /*meshCollider.sharedMesh = colliderData.CreateMesh();*/
+        //grassGenerator.GenerateGrass(maxGrassHeight, minGrassHeight, meshData.CreateMesh());
         //meshRender.sharedMaterial.mainTexture = texture;  
     }
 }
