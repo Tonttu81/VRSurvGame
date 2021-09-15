@@ -15,7 +15,7 @@ public static class MeshGenerator
 
 
 		// Muuttaa regionien/sen käyrän korkeuden minimi ja maksimi arvoja
-		float maxHeight = 10;
+		float maxHeight = 17;
 		float minHeight = 0;
 
 		//Level of detail
