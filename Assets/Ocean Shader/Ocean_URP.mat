@@ -63,7 +63,7 @@ Material:
     - Vector1_8E553F69: 1
     - Vector1_9F054525: -3.84
     - Vector1_AA3FFD27: -1.8
-    - Vector1_E09DE765: 0.01
+    - Vector1_E09DE765: 0.005
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
