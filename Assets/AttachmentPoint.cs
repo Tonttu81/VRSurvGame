@@ -4,15 +4,26 @@ using UnityEngine;
 
 public class AttachmentPoint : MonoBehaviour
 {
+    public int attachmentPointID;
+
     public bool objInRadius;
     public GameObject target;
+
+    AttachableObject parent;
+
+    private void Start()
+    {
+        parent = gameObject.GetComponentInParent<AttachableObject>();
+        parent.attachmentPoints[attachmentPointID].attachmentPointID = attachmentPointID;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "AttachmentPoint")
         {
             objInRadius = true;
-            target = other.gameObject;
+
+            parent.attachmentPoints[attachmentPointID].target = other.gameObject.transform.parent.gameObject;
         }
     }
 
