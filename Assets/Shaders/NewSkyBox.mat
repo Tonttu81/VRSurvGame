@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: NewSkyBox
+  m_Shader: {fileID: -6465566751694194690, guid: f763a2048a45b0b47acfffd234ed8644,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_D21AB320:
+        m_Texture: {fileID: 2800000, guid: 10336c0babd0cdf4a9f4b28292783744, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_8C4093A6: 5
+    - Vector1_98831632: 1
+    - Vector1_B837F05: 40
+    m_Colors:
+    - Color_3F593DCA: {r: 1, g: 1, b: 1, a: 0}
+    - Color_AF79D31D: {r: 0, g: 0.90980387, b: 1, a: 0}
+    - Color_C388E971: {r: 0, g: 1, b: 0.14361954, a: 0}
+    - Color_FD298914: {r: 0, g: 0.77201605, b: 1, a: 0}
+    - Vector2_8143431E: {r: 1, g: 1, b: 1, a: 1}
+    - Vector2_B3C30E78: {r: 1, g: 1, b: 1, a: 1}
