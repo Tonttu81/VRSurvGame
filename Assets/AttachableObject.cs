@@ -83,7 +83,15 @@ public class AttachableObject : MonoBehaviour
             }
             else // else if attach variable is true, attach object to objinradius
             {
+                if (GetComponents<FixedJoint>().Length < 1)
+                {
+                    Transform child = attachmentPoints[i].target.GetComponentInChildren<AttachmentPoint>().gameObject.transform;
 
+                    transform.position -= (attachmentPoints[i].gameObject.transform.position - transform.position) - (child.position - transform.position);
+
+                    FixedJoint joint = gameObject.AddComponent<FixedJoint>();
+                    joint.connectedBody = attachmentPoints[i].target.GetComponent<Rigidbody>();
+                }
             }
         }
     }
@@ -93,15 +101,17 @@ public class AttachableObject : MonoBehaviour
     {
         public GameObject gameObject;
         public int attachmentPointID;
-        public bool objInRadius;
+        public GameObject target;
         public bool attach;
+        public bool test;
 
-        public AttachmentPointObject(GameObject _gameObject, int _attachmentPointID, bool _objInRadius, bool _attach)
+        public AttachmentPointObject(GameObject _gameObject, int _attachmentPointID, GameObject _target, bool _attach, bool _test)
         {
             gameObject = _gameObject;
             attachmentPointID = _attachmentPointID;
-            objInRadius = _objInRadius;
+            target = _target;
             attach = _attach;
+            test = _test;
         }
     }
 }
