@@ -23,7 +23,7 @@ public class AttachmentPoint : MonoBehaviour
         {
             objInRadius = true;
 
-            parent.attachmentPoints[attachmentPointID].target = other.gameObject.transform.parent.gameObject;
+            parent.attachmentPoints[attachmentPointID].target = other.gameObject;
         }
     }
 
