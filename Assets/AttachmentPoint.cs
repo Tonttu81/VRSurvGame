@@ -6,30 +6,26 @@ public class AttachmentPoint : MonoBehaviour
 {
     public int attachmentPointID;
 
-    public bool objInRadius;
-    public GameObject target;
-
     AttachableObject parent;
 
     private void Start()
     {
+        // Ottaa attachmentpointin parent objektin ja päivittää parent objektiin attachmentpoint id:n
+        
         parent = gameObject.GetComponentInParent<AttachableObject>();
         parent.attachmentPoints[attachmentPointID].attachmentPointID = attachmentPointID;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)  // Jos attachmentpointin alueella on objekti, päivittää pää-skriptin kohde-objekti arvon
     {
         if (other.tag == "AttachmentPoint")
         {
-            objInRadius = true;
-
             parent.attachmentPoints[attachmentPointID].target = other.gameObject;
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerExit(Collider other)  // Jos attachmentpointin alueella ei ole objektia, päivittää kohde-objektin arvon tyhjäksi
     {
-        objInRadius = false;
-        target = null;
+        parent.attachmentPoints[attachmentPointID].target = null;
     }
 }

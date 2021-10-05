@@ -12,55 +12,56 @@ public class AttachableObject : MonoBehaviour
 
     public AttachmentPointObject[] attachmentPoints;
 
-    FixedJoint[] joints;
-    
     public GameObject previewObject;
 
     // Start is called before the first frame update
     void Start()
     {
-        /*
-        joints = new FixedJoint[attachmentPoints.Length];
-
-        for (int i = 0; i < attachmentPoints.Length; i++)
-        {
-            joints[i] = gameObject.AddComponent<FixedJoint>();
-        }
-        */
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (attachObject)
+        if (attachObject) 
         {
-            DeActivated();
+            DeActivated(); 
+        }
+        else
+        {
+            DetachObject();
         }
 
         if (inHand) // Jos objekti on kädessä
         {
-            if (activated)
+            SetPointsAsActive(); // Laita attachmentpointit päälle
+
+            if (activated) // Jos pelaaja painaa trigger nappia
             {
-                if (!attachmentPoints[0].gameObject.activeSelf)
-                {
-                    SetPointsAsActive();
-                }
-                else // Ja attachmentpointit on active
+                if (!GetComponent<FixedJoint>())
                 {
                     for (int i = 0; i < attachmentPoints.Length; i++) // Käy kaikki attachmentpointit läpi
                     {
-                        if (attachmentPoints[i].target != null) // Jos attachmentpointin alueella on objekti, attach variable on true
+                        if (attachmentPoints[i].target != null) // Jos attachmentpointin alueella on objekti
                         {
                             attachmentPoints[i].attach = true;
-                            UpdatePreview();
+                            UpdatePreview();  // Päivittää previewobjektin ominaisuudet
                         }
-                        else // Jos attachmentpointin alueella ei ole objektia, attach variable false
+                        else
                         {
                             attachmentPoints[i].attach = false;
                         }
                     }
                 }
+                else
+                {
+                    DetachObject();
+                }
             }
+        }
+        else
+        {
+            SetPointsAsInactive(); // Jos objekti ei ole kädessä, attachmentpointit menevät pois päältä
         }
 
         if (attachmentPoints.All(obj => obj.target == null))
@@ -69,6 +70,7 @@ public class AttachableObject : MonoBehaviour
         }
     }
 
+    // Näitä käytetään jotta voi ottaa ohjaimista input
     public void objGrabbed()
     {
         inHand = true;
@@ -87,7 +89,7 @@ public class AttachableObject : MonoBehaviour
     public void DeActivated()
     {
         activated = false;
-        for (int i = 0; i < attachmentPoints.Length; i++)
+        for (int i = 0; i < attachmentPoints.Length; i++) 
         {
             if (attachmentPoints[i].attach)
             {
@@ -104,19 +106,28 @@ public class AttachableObject : MonoBehaviour
         }
     }
 
+    void SetPointsAsInactive()
+    {
+        for (int i = 0; i < attachmentPoints.Length; i++)
+        {
+            attachmentPoints[i].gameObject.SetActive(false);
+        }
+    }
+
     void UpdatePreview()
     {
-        previewObject.GetComponent<MeshFilter>().sharedMesh = gameObject.GetComponent<MeshFilter>().sharedMesh;
-        previewObject.transform.localScale = transform.localScale;
+        previewObject.GetComponent<MeshFilter>().sharedMesh = gameObject.GetComponent<MeshFilter>().sharedMesh; // Vaihtaa previewobjektin meshin tämän objektin meshiksi.
+        previewObject.transform.localScale = transform.localScale; // Vaihtaa skaalan ja rotaation myös samaksi.
         previewObject.transform.rotation = transform.rotation;
         
 
         for (int i = 0; i < attachmentPoints.Length; i++)
         {
-            if (attachmentPoints[i].target != null)
+            if (attachmentPoints[i].target != null)  // Jos attachmentpointilla on target
             {
-                previewObject.transform.position = transform.position;
+                previewObject.transform.position = transform.position; // Päivittää previewobjektin sijainnin
 
+                // Jonka jälkeen antaa sijainnille offsetin jotta objekti olisi oikeassa kohdassa
                 previewObject.transform.position -= (attachmentPoints[i].gameObject.transform.position - transform.position) - (attachmentPoints[i].target.transform.position - transform.position);
             }
         }
@@ -124,17 +135,26 @@ public class AttachableObject : MonoBehaviour
 
     void AttachObject(int id)
     {
-        if (attachmentPoints[id].attach)
+        if (attachmentPoints[id].attach) 
         {
-            if (GetComponents<FixedJoint>().Length < 1)
+            if (!GetComponent<FixedJoint>()) // Jos objekti ei ole jo yhdistetty mihinkään
             {
+                // Siirtää ensin objektin oikeaan kohtaan
                 transform.position -= (attachmentPoints[id].gameObject.transform.position - transform.position) - (attachmentPoints[id].target.transform.position - transform.position);
 
+                // Jonka jälkeen luo jointin kahden objektin välille
                 FixedJoint joint = gameObject.AddComponent<FixedJoint>();
                 joint.connectedBody = attachmentPoints[id].target.GetComponentInParent<Rigidbody>();
             }
         }
-        
+    }
+
+    void DetachObject()
+    {
+        if (GetComponent<FixedJoint>())
+        {
+            Destroy(GetComponent<FixedJoint>());
+        }
     }
 
     [System.Serializable]
