@@ -12,7 +12,8 @@ public class AttachableObject : MonoBehaviour
 
     public AttachmentPointObject[] attachmentPoints;
 
-    public GameObject previewObject;
+    GameObject previewObject;
+    public GameObject previewObjectPrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +35,11 @@ public class AttachableObject : MonoBehaviour
 
         if (inHand) // Jos objekti on kädessä
         {
+            if (previewObject == null)
+            {
+                previewObject = Instantiate(previewObjectPrefab, transform.position, Quaternion.identity);
+            }
+
             SetPointsAsActive(); // Laita attachmentpointit päälle
 
             if (activated) // Jos pelaaja painaa trigger nappia
@@ -64,9 +70,12 @@ public class AttachableObject : MonoBehaviour
             SetPointsAsInactive(); // Jos objekti ei ole kädessä, attachmentpointit menevät pois päältä
         }
 
-        if (attachmentPoints.All(obj => obj.target == null))
+        if (previewObject != null)
         {
-            previewObject.GetComponent<MeshFilter>().sharedMesh = null;
+            if (attachmentPoints.All(obj => obj.target == null) || attachObject)
+            {
+                previewObject.GetComponent<MeshFilter>().sharedMesh = null;
+            }
         }
     }
 
