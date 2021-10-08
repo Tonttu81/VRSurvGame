@@ -1,0 +1,8 @@
+objekteille list variable
+objectid = monesko objekti on listassa
+crafting recipe ottaa listasta objektit niiden idn kautta
+
+
+crafting recipeille lista
+kun yhdistää kaksi objektia, käy listan läpi ja ottaa oikean recipen
+poistaa source objektit ja korvaa ne resultilla

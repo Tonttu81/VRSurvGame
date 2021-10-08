@@ -102,6 +102,7 @@ public class AttachableObject : MonoBehaviour
         {
             if (attachmentPoints[i].attach)
             {
+                // ei toimi mutta ehkä johtuu siitä että objekti pitäs pudottaa ennenku se yhistyy ? https://github.com/Unity-Technologies/XR-Interaction-Toolkit-Examples/issues/29 voi testata tätä
                 AttachObject(i);
             }
         }

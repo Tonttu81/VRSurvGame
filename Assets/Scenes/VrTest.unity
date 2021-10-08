@@ -1947,7 +1947,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddb02b0f38ebbdf4bad731513da9c063, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inHand: 1
+  inHand: 0
   activated: 0
   attachObject: 0
   attachmentPoints:
@@ -3343,7 +3343,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddb02b0f38ebbdf4bad731513da9c063, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inHand: 1
+  inHand: 0
   activated: 0
   attachObject: 0
   attachmentPoints:
@@ -3815,8 +3815,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddb02b0f38ebbdf4bad731513da9c063, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inHand: 1
-  activated: 1
+  inHand: 0
+  activated: 0
   attachObject: 0
   attachmentPoints:
   - gameObject: {fileID: 6270672698039190325}

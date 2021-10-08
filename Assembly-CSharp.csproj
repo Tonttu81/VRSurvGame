@@ -83,6 +83,7 @@
     <Compile Include="Assets\Photon\PhotonLibs\WebSocket\WebSocket.cs" />
     <Compile Include="Assets\Photon\PhotonRealtime\Demos\DemoLoadBalancing\ConnectAndJoinRandomLb.cs" />
     <Compile Include="Assets\PreviewObject.cs" />
+    <Compile Include="Assets\Scripts\CraftingSystem\CraftingRecipes.cs" />
     <Compile Include="Assets\Scripts\Day Night cycle\LightManager.cs" />
     <Compile Include="Assets\Scripts\Day Night cycle\LightPreset.cs" />
     <Compile Include="Assets\Scripts\Maybe\EndlessTerrain.cs" />
@@ -104,6 +105,7 @@
     <None Include="Assets\Shaders\ToonWater\UnlitShadowCaster.shader" />
     <None Include="Assets\Shaders\ToonWater\ToonLit.shader" />
     <None Include="Assets\Shaders\ToonWater\HiddenNormalsTexture.shader" />
+    <None Include="Assets\Scripts\CraftingSystem\daiojda.txt" />
     <None Include="Assets\Photon\PhotonLibs\changes-library.txt" />
     <None Include="Assets\Photon\PhotonUnityNetworking\readme.txt" />
     <None Include="Assets\Unity Assests\Stylized Sky\Shaders\Stylized Sky.shader" />
