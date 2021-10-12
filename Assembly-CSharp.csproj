@@ -64,10 +64,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\AttachableObject.cs" />
-    <Compile Include="Assets\AttachmentPoint.cs" />
-    <Compile Include="Assets\GrassGenerator.cs" />
-    <Compile Include="Assets\NetworkManager.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\Common\EventSystemSpawner.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\Common\OnStartDelete.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\Common\TextButtonTransition.cs" />
@@ -82,8 +78,10 @@
     <Compile Include="Assets\Photon\PhotonLibs\WebSocket\SocketWebTcp.cs" />
     <Compile Include="Assets\Photon\PhotonLibs\WebSocket\WebSocket.cs" />
     <Compile Include="Assets\Photon\PhotonRealtime\Demos\DemoLoadBalancing\ConnectAndJoinRandomLb.cs" />
-    <Compile Include="Assets\PreviewObject.cs" />
-    <Compile Include="Assets\Scripts\CraftingSystem\CraftingRecipes.cs" />
+    <Compile Include="Assets\Scripts\AttachableObject.cs" />
+    <Compile Include="Assets\Scripts\AttachmentPoint.cs" />
+    <Compile Include="Assets\Scripts\CraftingSystem\CraftingRecipe.cs" />
+    <Compile Include="Assets\Scripts\CraftingSystem\CraftingSystem.cs" />
     <Compile Include="Assets\Scripts\Day Night cycle\LightManager.cs" />
     <Compile Include="Assets\Scripts\Day Night cycle\LightPreset.cs" />
     <Compile Include="Assets\Scripts\Maybe\EndlessTerrain.cs" />
@@ -99,6 +97,8 @@
     <Compile Include="Assets\Scripts\World Gen Scripts\ObjectGenerator.cs" />
     <Compile Include="Assets\Scripts\World Gen Scripts\TextureGenerator.cs" />
     <Compile Include="Assets\Scripts\test.cs" />
+    <Compile Include="Assets\Shaders\GrassGenerator.cs" />
+    <Compile Include="Assets\Shaders\NetworkManager.cs" />
     <None Include="Assets\Photon\PhotonLibs\netstandard2.0\Photon3Unity3D.xml" />
     <None Include="Assets\Photon\PhotonUnityNetworking\changelog.txt" />
     <None Include="Assets\Shaders\ToonWater\ToonWater.shader" />
@@ -109,7 +109,7 @@
     <None Include="Assets\Photon\PhotonLibs\changes-library.txt" />
     <None Include="Assets\Photon\PhotonUnityNetworking\readme.txt" />
     <None Include="Assets\Unity Assests\Stylized Sky\Shaders\Stylized Sky.shader" />
-    <None Include="Assets\GeometryGrass.shader" />
+    <None Include="Assets\Shaders\GeometryGrass.shader" />
     <None Include="Assets\Photon\PhotonLibs\Photon3Unity3D.xml" />
     <None Include="Assets\Photon\PhotonUnityNetworking\link.xml" />
     <Reference Include="UnityEngine">

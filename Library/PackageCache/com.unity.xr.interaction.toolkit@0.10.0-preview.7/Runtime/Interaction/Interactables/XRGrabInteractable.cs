@@ -619,6 +619,15 @@ namespace UnityEngine.XR.Interaction.Toolkit
             SmoothVelocityEnd();
         }
 
+        /// <summary>
+        /// Tätä voi käyttää jos haluaa force-pudottaa objektin scriptin kautta.
+        /// </summary>
+        /// <param name="interactor">Tämä on todennäköisesti käsi, joka pitää objektia.</param>
+        public void CustomForceDrop(XRBaseInteractor interactor)
+        {
+            OnSelectExiting(interactor);
+        }
+
         /// <inheritdoc />
         public override bool IsHoverableBy(XRBaseInteractor interactor) => true;
 
