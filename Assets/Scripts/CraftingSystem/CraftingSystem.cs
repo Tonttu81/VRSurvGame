@@ -8,16 +8,19 @@ public class CraftingSystem : MonoBehaviour
 
     public List<CraftingRecipe> recipes;
 
-    public bool CheckForRecipes(int objectId)
+    public GameObject CheckForRecipes(int objectId, int targetObjectId)
     {
         for (int i = 0; i < recipes.Count; i++)
         {
-            if (recipes[i].objectID[0] == objectId || recipes[i].objectID[1] == objectId)
+            if (recipes[i].objectID[0] == objectId && recipes[i].objectID[1] == targetObjectId)
             {
-                print("ojjopjopjop");
-                return true;
+                return recipes[i].result;
+            }
+            else if (recipes[i].objectID[1] == objectId && recipes[i].objectID[0] == targetObjectId)
+            {
+                return recipes[i].result;
             }
         }
-        return false;
+        return null;
     }
 }

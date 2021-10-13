@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 8662053389585645603}
   - component: {fileID: 8662053389585645602}
   - component: {fileID: 8662053389585645601}
-  - component: {fileID: 8662053389585645600}
   m_Layer: 0
   m_Name: PreviewObject
   m_TagString: Untagged
@@ -80,15 +79,3 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8662053389585645615}
   m_Mesh: {fileID: 0}
---- !u!114 &8662053389585645600
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8662053389585645615}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 182e784931d878d48ae10c11084f5417, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

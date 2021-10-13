@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Axe
   m_EditorClassIdentifier: 
   objectID: 0000000001000000
-  result: {fileID: 0}
+  result: {fileID: 1090926652488394170, guid: ab5e6a57aeb394b4591f75cb84bac2dd, type: 3}

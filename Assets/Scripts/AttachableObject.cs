@@ -154,20 +154,26 @@ public class AttachableObject : MonoBehaviour
 
     void AttachObject(int id)
     {
-        if (attachmentPoints[id].attach) 
-        {
-            if (craftingSystem.CheckForRecipes(objectId))
-            {
+        AttachmentPointObject aPoint = attachmentPoints[id]; // Ottaa oikean attachmentpointin
 
+        if (aPoint.attach) // Tarkistaa vielä että pitääkö objekti yhdistää
+        {
+            GameObject crafting = craftingSystem.CheckForRecipes(objectId, aPoint.target.GetComponentInParent<AttachableObject>().objectId);  // Tarkistaa, löytyykö crafting recipeä yhdistetyille objekteille
+            
+            if (crafting) // Jos on crafting recipe, luo tuloksen recipestä ja poistaa source objektit
+            {
+                Instantiate(crafting, transform.position, transform.rotation);
+                Destroy(aPoint.target.transform.parent.gameObject); // Poistaa ensin target objektin
+                Destroy(gameObject); 
             }
-            else if (!GetComponent<FixedJoint>()) // Jos objekti ei ole jo yhdistetty mihinkään
+            else if (!GetComponent<FixedJoint>()) // Jos objekteille ei ole crafting recipeä ja objekti ei ole jo yhdistetty mihinkään
             {
                 // Siirtää ensin objektin oikeaan kohtaan
-                transform.position -= (attachmentPoints[id].gameObject.transform.position - transform.position) - (attachmentPoints[id].target.transform.position - transform.position);
+                transform.position -= (aPoint.gameObject.transform.position - transform.position) - (aPoint.target.transform.position - transform.position);
 
                 // Jonka jälkeen luo jointin kahden objektin välille
                 FixedJoint joint = gameObject.AddComponent<FixedJoint>();
-                joint.connectedBody = attachmentPoints[id].target.GetComponentInParent<Rigidbody>();
+                joint.connectedBody = aPoint.target.GetComponentInParent<Rigidbody>();
             }
         }
     }
