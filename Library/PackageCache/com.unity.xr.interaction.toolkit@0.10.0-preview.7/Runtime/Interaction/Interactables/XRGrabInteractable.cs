@@ -619,6 +619,11 @@ namespace UnityEngine.XR.Interaction.Toolkit
             SmoothVelocityEnd();
         }
 
+        public void CustomForceDrop(XRBaseInteractor interactor)
+        {
+            OnSelectExiting(interactor);
+        }
+
         /// <inheritdoc />
         public override bool IsHoverableBy(XRBaseInteractor interactor) => true;
 

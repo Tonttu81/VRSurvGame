@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu]
-public class CraftingRecipes : ScriptableObject
+public class CraftingRecipe : ScriptableObject
 {
-    public int[] objectID; 
+    public int[] objectID;
     public GameObject result;
 }
-

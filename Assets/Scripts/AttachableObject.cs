@@ -2,9 +2,12 @@
 using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class AttachableObject : MonoBehaviour
 {
+    [SerializeField] int objectId;
+
     [SerializeField] bool inHand;
     [SerializeField] bool activated;
 
@@ -12,13 +15,18 @@ public class AttachableObject : MonoBehaviour
 
     public AttachmentPointObject[] attachmentPoints;
 
+    CraftingSystem craftingSystem;
+
+    XRGrabInteractable xrGrabInteractable;
+
     GameObject previewObject;
     public GameObject previewObjectPrefab;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        xrGrabInteractable = GetComponent<XRGrabInteractable>();
+        craftingSystem = FindObjectOfType<CraftingSystem>().GetComponent<CraftingSystem>();
     }
 
     // Update is called once per frame
@@ -103,6 +111,7 @@ public class AttachableObject : MonoBehaviour
             if (attachmentPoints[i].attach)
             {
                 // ei toimi mutta ehkä johtuu siitä että objekti pitäs pudottaa ennenku se yhistyy ? https://github.com/Unity-Technologies/XR-Interaction-Toolkit-Examples/issues/29 voi testata tätä
+                xrGrabInteractable.CustomForceDrop(xrGrabInteractable.selectingInteractor);
                 AttachObject(i);
             }
         }
@@ -145,16 +154,26 @@ public class AttachableObject : MonoBehaviour
 
     void AttachObject(int id)
     {
-        if (attachmentPoints[id].attach) 
+        AttachmentPointObject aPoint = attachmentPoints[id]; // Ottaa oikean attachmentpointin
+
+        if (aPoint.attach) // Tarkistaa vielä että pitääkö objekti yhdistää
         {
-            if (!GetComponent<FixedJoint>()) // Jos objekti ei ole jo yhdistetty mihinkään
+            GameObject crafting = craftingSystem.CheckForRecipes(objectId, aPoint.target.GetComponentInParent<AttachableObject>().objectId);  // Tarkistaa, löytyykö crafting recipeä yhdistetyille objekteille
+            
+            if (crafting) // Jos on crafting recipe, luo tuloksen recipestä ja poistaa source objektit
+            {
+                Instantiate(crafting, transform.position, transform.rotation);
+                Destroy(aPoint.target.transform.parent.gameObject); // Poistaa ensin target objektin
+                Destroy(gameObject); 
+            }
+            else if (!GetComponent<FixedJoint>()) // Jos objekteille ei ole crafting recipeä ja objekti ei ole jo yhdistetty mihinkään
             {
                 // Siirtää ensin objektin oikeaan kohtaan
-                transform.position -= (attachmentPoints[id].gameObject.transform.position - transform.position) - (attachmentPoints[id].target.transform.position - transform.position);
+                transform.position -= (aPoint.gameObject.transform.position - transform.position) - (aPoint.target.transform.position - transform.position);
 
                 // Jonka jälkeen luo jointin kahden objektin välille
                 FixedJoint joint = gameObject.AddComponent<FixedJoint>();
-                joint.connectedBody = attachmentPoints[id].target.GetComponentInParent<Rigidbody>();
+                joint.connectedBody = aPoint.target.GetComponentInParent<Rigidbody>();
             }
         }
     }
