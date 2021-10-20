@@ -624,6 +624,7 @@ namespace UnityEngine.XR.Interaction.Toolkit
             OnSelectExiting(interactor);
         }
 
+
         /// <inheritdoc />
         public override bool IsHoverableBy(XRBaseInteractor interactor) => true;
 

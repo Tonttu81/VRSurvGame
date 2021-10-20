@@ -109,15 +109,14 @@
       }
     },
     "com.unity.xr.interaction.toolkit": {
-      "version": "0.10.0-preview.7",
+      "version": "file:com.unity.xr.interaction.toolkit@0.10.0-preview.7",
       "depth": 0,
-      "source": "registry",
+      "source": "embedded",
       "dependencies": {
         "com.unity.inputsystem": "1.0.0",
         "com.unity.ugui": "1.0.0",
         "com.unity.xr.legacyinputhelpers": "2.1.4"
-      },
-      "url": "https://packages.unity.com"
+      }
     },
     "com.unity.xr.legacyinputhelpers": {
       "version": "2.1.4",
