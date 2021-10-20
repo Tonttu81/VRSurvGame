@@ -579,7 +579,7 @@ GameObject:
   - component: {fileID: 51448819}
   - component: {fileID: 51448818}
   - component: {fileID: 51448820}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Vr Rig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -911,7 +911,7 @@ GameObject:
   - component: {fileID: 551244237}
   - component: {fileID: 551244235}
   - component: {fileID: 551244236}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: AttachPoint1
   m_TagString: AttachmentPoint
   m_Icon: {fileID: 0}
@@ -1756,7 +1756,7 @@ GameObject:
   - component: {fileID: 1132555239}
   - component: {fileID: 1132555238}
   - component: {fileID: 1132555237}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Stick (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2469,7 +2469,7 @@ GameObject:
   - component: {fileID: 1388449093}
   - component: {fileID: 1388449091}
   - component: {fileID: 1388449092}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: AttachPoint0
   m_TagString: AttachmentPoint
   m_Icon: {fileID: 0}
@@ -3533,7 +3533,7 @@ GameObject:
   - component: {fileID: 6270672696650197420}
   - component: {fileID: 6270672696650197421}
   - component: {fileID: 6270672696650197426}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Stick
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3565,7 +3565,7 @@ GameObject:
   - component: {fileID: 6270672698039190324}
   - component: {fileID: 6270672698039190327}
   - component: {fileID: 6270672698039190326}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: AttachPoint0
   m_TagString: AttachmentPoint
   m_Icon: {fileID: 0}
@@ -3649,7 +3649,7 @@ GameObject:
   - component: {fileID: 6270672698304600261}
   - component: {fileID: 6270672698304600260}
   - component: {fileID: 6270672698304600263}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: AttachPoint1
   m_TagString: AttachmentPoint
   m_Icon: {fileID: 0}

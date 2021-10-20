@@ -17,7 +17,7 @@ public class AttachableObject : MonoBehaviour
 
     CraftingSystem craftingSystem;
 
-    XRGrabInteractable xrGrabInteractable;
+    public XRGrabInteractable xrGrabInteractable;
 
     GameObject previewObject;
     public GameObject previewObjectPrefab;
@@ -110,8 +110,9 @@ public class AttachableObject : MonoBehaviour
         {
             if (attachmentPoints[i].attach)
             {
-                // ei toimi mutta ehkä johtuu siitä että objekti pitäs pudottaa ennenku se yhistyy ? https://github.com/Unity-Technologies/XR-Interaction-Toolkit-Examples/issues/29 voi testata tätä
+                //https://github.com/Unity-Technologies/XR-Interaction-Toolkit-Examples/issues/29
                 xrGrabInteractable.CustomForceDrop(xrGrabInteractable.selectingInteractor);
+                xrGrabInteractable.CustomForceDrop(attachmentPoints[i].target.GetComponentInParent<XRGrabInteractable>().selectingInteractor);
                 AttachObject(i);
             }
         }
@@ -163,8 +164,12 @@ public class AttachableObject : MonoBehaviour
             if (crafting) // Jos on crafting recipe, luo tuloksen recipestä ja poistaa source objektit
             {
                 Instantiate(crafting, transform.position, transform.rotation);
-                Destroy(aPoint.target.transform.parent.gameObject); // Poistaa ensin target objektin
-                Destroy(gameObject); 
+
+                //vvvvvv tässä ongelma, en tiiä mikä
+                //Destroy(aPoint.target.transform.parent.gameObject); // Poistaa ensin target objektin
+                //Destroy(gameObject); 
+                //^^^^^^
+
             }
             else if (!GetComponent<FixedJoint>()) // Jos objekteille ei ole crafting recipeä ja objekti ei ole jo yhdistetty mihinkään
             {

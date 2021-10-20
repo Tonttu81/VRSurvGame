@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6261858373494583523}
   - component: {fileID: 6261858373494583522}
   - component: {fileID: 6261858373494583521}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: AttachPoint0
   m_TagString: AttachmentPoint
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 6261858374366169718}
   - component: {fileID: 6261858374366169715}
   - component: {fileID: 6261858374366169717}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: temprock
   m_TagString: Untagged
   m_Icon: {fileID: 0}

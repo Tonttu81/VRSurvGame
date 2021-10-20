@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7858671639154453840}
   - component: {fileID: 7858671639154453854}
   - component: {fileID: 7858671639154453855}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: AttachPoint1
   m_TagString: AttachmentPoint
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 7858671639376508413}
   - component: {fileID: 7858671639376508412}
   - component: {fileID: 7858671639376508411}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Stick
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -345,7 +345,7 @@ GameObject:
   - component: {fileID: 7858671639752339742}
   - component: {fileID: 7858671639752339740}
   - component: {fileID: 7858671639752339741}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: AttachPoint0
   m_TagString: AttachmentPoint
   m_Icon: {fileID: 0}
