@@ -86,6 +86,7 @@
     <Compile Include="Assets\Scripts\Day Night cycle\LightPreset.cs" />
     <Compile Include="Assets\Scripts\Maybe\EndlessTerrain.cs" />
     <Compile Include="Assets\Scripts\Maybe\NotInUse.cs" />
+    <Compile Include="Assets\Scripts\PlayerUI.cs" />
     <Compile Include="Assets\Scripts\VR Scripts\ContinuousMovement.cs" />
     <Compile Include="Assets\Scripts\VR Scripts\HandPresence.cs" />
     <Compile Include="Assets\Scripts\VR Scripts\locamotionController.cs" />
@@ -664,17 +665,11 @@
     <Reference Include="Unity.Subsystem.Registration">
       <HintPath>C:/Users/Joni/Desktop/Unity Projects/VRSurvGame/Library/ScriptAssemblies/Unity.Subsystem.Registration.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.XR.Interaction.Toolkit">
-      <HintPath>C:/Users/Joni/Desktop/Unity Projects/VRSurvGame/Library/ScriptAssemblies/Unity.XR.Interaction.Toolkit.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Shaders">
       <HintPath>C:/Users/Joni/Desktop/Unity Projects/VRSurvGame/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
       <HintPath>C:/Users/Joni/Desktop/Unity Projects/VRSurvGame/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.XR.Interaction.Toolkit.Editor">
-      <HintPath>C:/Users/Joni/Desktop/Unity Projects/VRSurvGame/Library/ScriptAssemblies/Unity.XR.Interaction.Toolkit.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.Editor">
       <HintPath>C:/Users/Joni/Desktop/Unity Projects/VRSurvGame/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
@@ -756,6 +751,10 @@
       <Project>{FD1865F4-7D5C-6DD7-9FB3-54400C316578}</Project>
       <Name>PunDemos.DemoSlotcarEditor</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.XR.Interaction.Toolkit.csproj">
+      <Project>{B2972FC8-EE1D-55EE-8A78-0383E0AABF62}</Project>
+      <Name>Unity.XR.Interaction.Toolkit</Name>
+    </ProjectReference>
     <ProjectReference Include="PhotonUnityNetworking.Demos.csproj">
       <Project>{DA242FC0-5BDF-C797-A2BA-1AFB67B05A20}</Project>
       <Name>PhotonUnityNetworking.Demos</Name>
@@ -763,6 +762,10 @@
     <ProjectReference Include="PhotonUnityNetworking.Utilities.csproj">
       <Project>{65B84297-7609-6FCD-CF76-D2D87608ADC5}</Project>
       <Name>PhotonUnityNetworking.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.XR.Interaction.Toolkit.Editor.csproj">
+      <Project>{F94EB381-CE5D-5A17-D017-A0DE5AB1BE65}</Project>
+      <Name>Unity.XR.Interaction.Toolkit.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonRealtime.csproj">
       <Project>{1FACEDDA-400F-D37B-7A2B-3098CC7F67AC}</Project>

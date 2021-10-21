@@ -110,9 +110,6 @@ public class AttachableObject : MonoBehaviour
         {
             if (attachmentPoints[i].attach)
             {
-                //https://github.com/Unity-Technologies/XR-Interaction-Toolkit-Examples/issues/29
-                xrGrabInteractable.CustomForceDrop(xrGrabInteractable.selectingInteractor);
-                xrGrabInteractable.CustomForceDrop(attachmentPoints[i].target.GetComponentInParent<XRGrabInteractable>().selectingInteractor);
                 AttachObject(i);
             }
         }
@@ -160,7 +157,11 @@ public class AttachableObject : MonoBehaviour
         if (aPoint.attach) // Tarkistaa vielä että pitääkö objekti yhdistää
         {
             GameObject crafting = craftingSystem.CheckForRecipes(objectId, aPoint.target.GetComponentInParent<AttachableObject>().objectId);  // Tarkistaa, löytyykö crafting recipeä yhdistetyille objekteille
-            
+
+            //https://github.com/Unity-Technologies/XR-Interaction-Toolkit-Examples/issues/29
+            xrGrabInteractable.CustomForceDrop(xrGrabInteractable.selectingInteractor);
+            xrGrabInteractable.CustomForceDrop(attachmentPoints[id].target.GetComponentInParent<XRGrabInteractable>().selectingInteractor);
+
             if (crafting) // Jos on crafting recipe, luo tuloksen recipestä ja poistaa source objektit
             {
                 Instantiate(crafting, transform.position, transform.rotation);
