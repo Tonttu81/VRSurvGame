@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class PlayerUI : MonoBehaviour
 {
-    float hunger;
-    float thrist;
+    public float hunger;
+    public float thirst;
 
     [SerializeField]Slider hungerBar;
     [SerializeField]Slider thirstBar;
@@ -14,7 +14,7 @@ public class PlayerUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        thrist = thirstBar.maxValue;
+        thirst = thirstBar.maxValue;
         hunger = hungerBar.maxValue;
     }
 
@@ -22,9 +22,18 @@ public class PlayerUI : MonoBehaviour
     void Update()
     {
         hunger -= Time.deltaTime;
-        thrist -= Time.deltaTime;
+        thirst -= Time.deltaTime;
 
         hungerBar.value = hunger;
-        thirstBar.value = thrist;
+        thirstBar.value = thirst;
+
+        if (hunger > 100)
+        {
+            hunger = 100f;
+        }
+        if (thirst > 100)
+        {
+            thirst = 100f;
+        }
     }
 }

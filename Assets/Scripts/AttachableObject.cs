@@ -32,6 +32,7 @@ public class AttachableObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Testaamista varten jos ei ole vr headsettiä käytössä, yhdistää objektin kun attachobject on true ja irroittaa kun false
         if (attachObject) 
         {
             DeActivated(); 
@@ -45,14 +46,15 @@ public class AttachableObject : MonoBehaviour
         {
             if (previewObject == null)
             {
-                previewObject = Instantiate(previewObjectPrefab, transform.position, Quaternion.identity);
+                // Luo previewobjektin jos semmoista ei ole vielä tällä objektilla olemassa
+                previewObject = Instantiate(previewObjectPrefab, transform.position, Quaternion.identity); 
             }
 
             SetPointsAsActive(); // Laita attachmentpointit päälle
 
             if (activated) // Jos pelaaja painaa trigger nappia
             {
-                if (!GetComponent<FixedJoint>())
+                if (!GetComponent<FixedJoint>()) // Tarkistaa onko objekti yhdistetty jo
                 {
                     for (int i = 0; i < attachmentPoints.Length; i++) // Käy kaikki attachmentpointit läpi
                     {
@@ -67,7 +69,7 @@ public class AttachableObject : MonoBehaviour
                         }
                     }
                 }
-                else
+                else // Jos objekti on jo kiinni toisessa objektissa, irroittaa objektin
                 {
                     DetachObject();
                 }
@@ -78,16 +80,16 @@ public class AttachableObject : MonoBehaviour
             SetPointsAsInactive(); // Jos objekti ei ole kädessä, attachmentpointit menevät pois päältä
         }
 
-        if (previewObject != null)
+        if (previewObject != null) // Jos previewobjekti on olemassa
         {
-            if (attachmentPoints.All(obj => obj.target == null) || attachObject)
+            if (attachmentPoints.All(obj => obj.target == null) || attachObject) // Tarkistaa onko minkään attachmentpointin alueella mitään
             {
-                previewObject.GetComponent<MeshFilter>().sharedMesh = null;
+                previewObject.GetComponent<MeshFilter>().sharedMesh = null; // Ja jos ei ole, tekee objektista näkymättömän
             }
         }
     }
 
-    // Näitä käytetään jotta voi ottaa ohjaimista input
+    // vv Näitä käytetään jotta voi ottaa ohjaimista input
     public void objGrabbed()
     {
         inHand = true;
@@ -114,8 +116,9 @@ public class AttachableObject : MonoBehaviour
             }
         }
     }
+    //^^
 
-    void SetPointsAsActive()
+    void SetPointsAsActive() // Aktivoi kaikki attachmentpointit
     {
         for (int i = 0; i < attachmentPoints.Length; i++)
         {
@@ -123,7 +126,7 @@ public class AttachableObject : MonoBehaviour
         }
     }
 
-    void SetPointsAsInactive()
+    void SetPointsAsInactive() // Ottaa kaikki attachmentpointit pois käytöstä
     {
         for (int i = 0; i < attachmentPoints.Length; i++)
         {
@@ -159,6 +162,8 @@ public class AttachableObject : MonoBehaviour
             GameObject crafting = craftingSystem.CheckForRecipes(objectId, aPoint.target.GetComponentInParent<AttachableObject>().objectId);  // Tarkistaa, löytyykö crafting recipeä yhdistetyille objekteille
 
             //https://github.com/Unity-Technologies/XR-Interaction-Toolkit-Examples/issues/29
+
+            //Pudottaa objektit pois pelaajan käsistä
             xrGrabInteractable.CustomForceDrop(xrGrabInteractable.selectingInteractor);
             xrGrabInteractable.CustomForceDrop(attachmentPoints[id].target.GetComponentInParent<XRGrabInteractable>().selectingInteractor);
 
@@ -184,7 +189,7 @@ public class AttachableObject : MonoBehaviour
         }
     }
 
-    void DetachObject()
+    void DetachObject() // Irroittaa objektin toisesta objektista
     {
         if (GetComponent<FixedJoint>())
         {

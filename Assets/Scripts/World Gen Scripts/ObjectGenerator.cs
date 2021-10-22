@@ -8,9 +8,21 @@ public class ObjectGenerator : MonoBehaviour
 
     public int objectDensity;
 
+    List<GameObject> spawnedObjects;
+
     private void Start()
     {
         GenerateObjects();
+    }
+
+    private void Update()
+    {
+        /*
+        for (int i = 0; i < spawnedObjects.Count; i++)
+        {
+
+        }
+        */
     }
 
     public void GenerateObjects()
@@ -37,6 +49,7 @@ public class ObjectGenerator : MonoBehaviour
                         float yRotation = orng.Next(0, 360);
 
                         GameObject tree = Instantiate(objects[i].obj, objectRay.point, Quaternion.Euler(new Vector3(0, yRotation, 0)));
+                        spawnedObjects.Add(tree);
 
 
                         int rnd = orng.Next(-5, 5);
@@ -48,11 +61,6 @@ public class ObjectGenerator : MonoBehaviour
                     }
                 }
             }
-        }
-
-        for (int i = 0; i < objectDensity; i++)
-        {
-
         }
     }
 
